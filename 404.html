@@ -1,0 +1,28 @@
+---
+permalink: /404.html
+layout: page
+---
+
+<body class="hex-bg min-h-screen flex flex-col items-center justify-center px-4">
+
+    <!-- Corner-decorated container -->
+    <div class="hxkr-panel-bright relative p-10 md:p-16 max-w-xl w-full text-center corner-tl corner-br">
+
+        <!-- Error code -->
+        <div class="font-hud text-xs tracking-widest mb-2" style="color:#3a5e3a;">// ERROR_CODE</div>
+        <div class="font-display text-[10rem] leading-none text-glow animate-glitch mb-2" style="color:#00ff41;">404</div>
+
+        <!-- Subheading -->
+        <div class="font-hud text-sm tracking-widest mb-6" style="color:#00c832;">
+            NODE_NOT_FOUND
+        </div>
+
+        <!-- Actions -->
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+            <a href="{{ '/' | relative_url }}" class="hxkr-btn">⌂ RETURN_HOME</a>
+            <a href="javascript:history.back()" class="hxkr-btn hxkr-btn-ghost">← GO_BACK</a>
+        </div>
+
+    </div>
+
+</body>
