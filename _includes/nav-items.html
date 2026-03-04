@@ -1,6 +1,11 @@
+<a href="{{ 'index.html' }}" class="text-glow-dim text-lg" style="color:#00ff41;">INICIO</a>
+<a href="{{ 'primer-corte.html' }}" class="text-glow-dim text-lg" style="color:#00ff41;">PRIMER CORTE</a>
+
+{%- comment -%}
 {%- for path in include.paths -%}
 {%- assign hyperpage = site.pages | where: "path", path | first -%}
 {%- if hyperpage.title %}
-<a href="{{ hyperpage.url | relative_url }}" class="text-glow-dim text-lg" style="color:#00ff41;">{{ hyperpage.title | escape }}</a>
+<a href="{{ hyperpage.url }}" class="text-glow-dim text-lg" style="color:#00ff41;">{{ hyperpage.title | escape }}</a>
 {%- endif -%}
 {%- endfor %}
+{%- endcomment -%}

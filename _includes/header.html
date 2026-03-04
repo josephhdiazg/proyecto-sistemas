@@ -3,7 +3,7 @@
 {%- assign page_titles = site.pages | map: 'title' | compact %}
 
 <header class="hxkr-panel sticky top-0 z-50 flex items-center justify-between px-6 py-3" style="border-bottom:1px solid #1a2e1a;">
-    <a rel="author" href="{{ '/' | relative_url }}" class="font-display text-4xl text-glow" style="color:#00ff41;line-height:1;">{{ site.title | escape }}</a>
+    <a rel="author" href="{{ 'index.html' }}" class="font-display text-4xl text-glow" style="color:#00ff41;line-height:1;">{{ site.title | escape }}</a>
 
     {%- unless page_titles == empty %}
         <nav class="hidden md:flex items-center gap-6 text-xs uppercase tracking-widest" style="color:#3a5e3a;">

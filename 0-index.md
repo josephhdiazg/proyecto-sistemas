@@ -1,5 +1,5 @@
 ---
-permalink: /
+permalink: index.html
 layout: default
 title: Inicio
 ---
@@ -8,7 +8,7 @@ title: Inicio
 
 Los **sistemas operativos (SO)** son el software fundamental que permite que el hardware de un computador funcione y que las aplicaciones puedan ejecutarse. Actúan como intermediarios entre el usuario, los programas y los recursos físicos (CPU, memoria, almacenamiento y dispositivos de entrada/salida).
 
-![Windows NT 4.0 Splash Screen]({{ '/assets/img/winnt4.png' | relative_url }})
+![Windows NT 4.0 Splash Screen]({{ 'assets/img/winnt4.png' }})
 
 ---
 
@@ -127,7 +127,7 @@ El resultado fue **Linux**, publicado bajo licencia GPL, lo que permitió:
 
 Linux no es un sistema operativo completo por sí solo, sino el **kernel**. Al combinarse con herramientas del proyecto GNU, nació lo que comúnmente llamamos “GNU/Linux”.
 
-![Linus Torvalds]({{ '/assets/img/linus.png' | relative_url }})
+![Linus Torvalds]({{ 'assets/img/linus.png' }})
 _Linus Torvalds_
 
 ---
