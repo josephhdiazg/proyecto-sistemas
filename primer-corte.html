@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es-CO" class="dark"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Primer Corte | Proyecto Sistemas Operativos</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Primer Corte" />
+<meta property="og:locale" content="es_CO" />
+<meta name="description" content="Michael Arias, Joseph Diaz" />
+<meta property="og:description" content="Michael Arias, Joseph Diaz" />
+<link rel="canonical" href="/primer-corte" />
+<meta property="og:url" content="/primer-corte" />
+<meta property="og:site_name" content="Proyecto Sistemas Operativos" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Primer Corte" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Michael Arias, Joseph Diaz","headline":"Primer Corte","url":"/primer-corte"}</script>
+<!-- End Jekyll SEO tag -->
+<link id="main-stylesheet" rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Proyecto Sistemas Operativos" />
+</head><body class="min-h-screen hex-bg">
+
+<header class="hxkr-panel sticky top-0 z-50 flex items-center justify-between px-6 py-3" style="border-bottom:1px solid #1a2e1a;">
+    <a rel="author" href="/" class="font-display text-4xl text-glow" style="color:#00ff41;line-height:1;">Proyecto Sistemas Operativos</a>
+        <nav class="hidden md:flex items-center gap-6 text-xs uppercase tracking-widest" style="color:#3a5e3a;">
+            
+<a href="/" class="text-glow-dim text-lg" style="color:#00ff41;">Inicio</a>
+<a href="/primer-corte" class="text-glow-dim text-lg" style="color:#00ff41;">Primer Corte</a>
+
+        </nav>
+</header>
+<div class="scan-line"></div>
+
+    <main class="max-w-6xl mx-auto px-4 py-10 space-y-10 mb-10">
+        <article class="prose lg:prose-xl prose-hxkr">
+    <h1 id="manual-práctico-de-utilidades-cmd-y-powershell-para-mantenimiento-de-windows">Manual práctico de utilidades CMD y PowerShell para mantenimiento de Windows</h1>
+
+<p>Este manual recopila comandos esenciales de <strong>CMD</strong> y <strong>PowerShell</strong> para realizar mantenimiento general del sistema en Windows. Incluye diagnóstico, reparación, red, almacenamiento, procesos y automatización básica.</p>
+
+<!-- TERMINAL / LOG PANEL -->
+<div class="hxkr-panel p-0 overflow-hidden flex flex-col" style="height:320px;">
+    <div class="flex items-center gap-2 px-4 py-2" style="background:#111911;border-bottom:1px solid #1a2e1a;">
+        <span class="w-2.5 h-2.5 rounded-full bg-red-500" style="background:#ff2244;box-shadow:0 0 4px #ff2244;"></span>
+        <span class="w-2.5 h-2.5 rounded-full" style="background:#ffb300;box-shadow:0 0 4px #ffb300;"></span>
+        <span class="w-2.5 h-2.5 rounded-full" style="background:#00ff41;box-shadow:0 0 4px #00ff41;"></span>
+        <span class="ml-2 font-hud text-xs tracking-widest" style="color:#3a5e3a;">COMANDOS</span>
+    </div>
+    <div class="flex-1 overflow-hidden p-4 text-xs leading-6 font-mono" style="color:#00c832;">
+        <div class="log-scroll">
+            <div><span style="color:#3a5e3a;">[00:00:01]</span> sfc /scannow</div>
+            <div><span style="color:#3a5e3a;">[00:00:02]</span> <span style="color:#00ff41;">✓</span> DISM /Online /Cleanup-Image /RestoreHealth</div>
+            <div><span style="color:#3a5e3a;">[00:00:03]</span> chkdsk C: /f /r</div>
+            <div><span style="color:#3a5e3a;">[00:00:04]</span> <span style="color:#ffb300;">!</span> tasklist</div>
+            <div><span style="color:#3a5e3a;">[00:00:05]</span> <span style="color:#ffb300;">!</span> Get-Process</div>
+            <div><span style="color:#3a5e3a;">[00:00:06]</span> taskkill /IM programa.exe /F</div>
+            <div><span style="color:#3a5e3a;">[00:00:07]</span> <span style="color:#ff2244;">✗</span> Stop-Process -Name programa -Force</div>
+            <div><span style="color:#3a5e3a;">[00:00:08]</span> perfmon</div>
+            <div><span style="color:#3a5e3a;">[00:00:09]</span> <span style="color:#00ff41;">✓</span> Get-ComputerInfo</div>
+            <div><span style="color:#3a5e3a;">[00:00:10]</span> ipconfig /all</div>
+            <div><span style="color:#3a5e3a;">[00:00:11]</span> ipconfig /release</div>
+            <div><span style="color:#3a5e3a;">[00:00:12]</span> <span style="color:#00ff41;">✓</span> ipconfig /renew</div>
+            <div><span style="color:#3a5e3a;">[00:00:13]</span> ipconfig /flushdns</div>
+            <div><span style="color:#3a5e3a;">[00:00:14]</span> <span style="color:#00ffe7;">i</span> Get-PSDrive</div>
+            <!-- Duplicate for seamless loop -->
+            <div><span style="color:#3a5e3a;">[00:00:01]</span> sfc /scannow</div>
+            <div><span style="color:#3a5e3a;">[00:00:02]</span> <span style="color:#00ff41;">✓</span> DISM /Online /Cleanup-Image /RestoreHealth</div>
+            <div><span style="color:#3a5e3a;">[00:00:03]</span> chkdsk C: /f /r</div>
+            <div><span style="color:#3a5e3a;">[00:00:04]</span> <span style="color:#ffb300;">!</span> tasklist</div>
+            <div><span style="color:#3a5e3a;">[00:00:05]</span> <span style="color:#ffb300;">!</span> Get-Process</div>
+            <div><span style="color:#3a5e3a;">[00:00:06]</span> taskkill /IM programa.exe /F</div>
+            <div><span style="color:#3a5e3a;">[00:00:07]</span> <span style="color:#ff2244;">✗</span> Stop-Process -Name programa -Force</div>
+        </div>
+    </div>
+    <div class="px-4 py-2" style="border-top:1px solid #1a2e1a;">
+        <div class="flex items-center gap-2">
+            <span style="color:#00ff41;">$</span>
+            <input type="text" class="hxkr-input" style="border:none;background:transparent;padding:0;" placeholder="ingresa un comando..." disabled="" />
+            <span class="animate-blink" style="color:#00ff41;">▋</span>
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<h2 id="1-verificación-y-reparación-del-sistema">1. Verificación y reparación del sistema</h2>
+
+<h3 id="11-comprobar-integridad-de-archivos-del-sistema-sfc">1.1 Comprobar integridad de archivos del sistema (SFC)</h3>
+
+<pre><code class="language-cmd">sfc /scannow
+</code></pre>
+
+<ul>
+  <li>Escanea y repara archivos del sistema dañados.</li>
+  <li>Ejecutar como <strong>Administrador</strong>.</li>
+  <li>Útil ante errores, cierres inesperados o comportamiento inestable.</li>
+</ul>
+
+<hr />
+
+<h3 id="12-reparar-imagen-del-sistema-dism">1.2 Reparar imagen del sistema (DISM)</h3>
+
+<pre><code class="language-cmd">DISM /Online /Cleanup-Image /RestoreHealth
+</code></pre>
+
+<ul>
+  <li>Repara la imagen de Windows usando Windows Update.</li>
+  <li>Ejecutar antes de <code class="language-plaintext highlighter-rouge">sfc</code> si este falla.</li>
+</ul>
+
+<hr />
+
+<h3 id="13-comprobar-disco-chkdsk">1.3 Comprobar disco (CHKDSK)</h3>
+
+<pre><code class="language-cmd">chkdsk C: /f /r
+</code></pre>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">/f</code> corrige errores.</li>
+  <li><code class="language-plaintext highlighter-rouge">/r</code> localiza sectores defectuosos.</li>
+  <li>Puede requerir reinicio si se ejecuta en la unidad del sistema.</li>
+</ul>
+
+<hr />
+
+<h2 id="2-gestión-de-procesos-y-rendimiento">2. Gestión de procesos y rendimiento</h2>
+
+<h3 id="21-ver-procesos-activos">2.1 Ver procesos activos</h3>
+
+<pre><code class="language-cmd">tasklist
+</code></pre>
+
+<p>En PowerShell:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Get-Process</span><span class="w">
+</span></code></pre></div></div>
+
+<hr />
+
+<h3 id="22-finalizar-proceso">2.2 Finalizar proceso</h3>
+
+<pre><code class="language-cmd">taskkill /IM programa.exe /F
+</code></pre>
+
+<p>En PowerShell:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Stop-Process</span><span class="w"> </span><span class="nt">-Name</span><span class="w"> </span><span class="nx">programa</span><span class="w"> </span><span class="nt">-Force</span><span class="w">
+</span></code></pre></div></div>
+
+<hr />
+
+<h3 id="23-monitorizar-uso-del-sistema">2.3 Monitorizar uso del sistema</h3>
+
+<pre><code class="language-cmd">perfmon
+</code></pre>
+
+<p>Abre el Monitor de Rendimiento.</p>
+
+<p>En PowerShell:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Get-ComputerInfo</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Muestra información detallada del sistema.</p>
+
+<hr />
+
+<h2 id="3-gestión-de-red">3. Gestión de red</h2>
+
+<h3 id="31-ver-configuración-ip">3.1 Ver configuración IP</h3>
+
+<pre><code class="language-cmd">ipconfig /all
+</code></pre>
+
+<hr />
+
+<h3 id="32-renovar-dirección-ip">3.2 Renovar dirección IP</h3>
+
+<pre><code class="language-cmd">ipconfig /release
+ipconfig /renew
+</code></pre>
+
+<hr />
+
+<h3 id="33-vaciar-caché-dns">3.3 Vaciar caché DNS</h3>
+
+<pre><code class="language-cmd">ipconfig /flushdns
+</code></pre>
+
+<hr />
+
+<h3 id="34-probar-conectividad">3.4 Probar conectividad</h3>
+
+<pre><code class="language-cmd">ping google.com
+</code></pre>
+
+<pre><code class="language-cmd">tracert google.com
+</code></pre>
+
+<p>En PowerShell:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Test-NetConnection</span><span class="w"> </span><span class="nx">google.com</span><span class="w">
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="4-gestión-de-almacenamiento">4. Gestión de almacenamiento</h2>
+
+<h3 id="41-ver-uso-de-discos-powershell">4.1 Ver uso de discos (PowerShell)</h3>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Get-PSDrive</span><span class="w">
+</span></code></pre></div></div>
+
+<hr />
+
+<h3 id="42-listar-discos-y-particiones">4.2 Listar discos y particiones</h3>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Get-Disk</span><span class="w">
+</span><span class="nx">Get-Partition</span><span class="w">
+</span></code></pre></div></div>
+
+<hr />
+
+<h3 id="43-administrar-discos-interactivo">4.3 Administrar discos (interactivo)</h3>
+
+<pre><code class="language-cmd">diskpart
+</code></pre>
+
+<p>Comandos comunes dentro de diskpart:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>list disk
+select disk 0
+list partition
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="5-usuarios-y-permisos">5. Usuarios y permisos</h2>
+
+<h3 id="51-ver-usuarios-locales">5.1 Ver usuarios locales</h3>
+
+<pre><code class="language-cmd">net user
+</code></pre>
+
+<hr />
+
+<h3 id="52-crear-usuario">5.2 Crear usuario</h3>
+
+<pre><code class="language-cmd">net user nuevoUsuario contraseña /add
+</code></pre>
+
+<hr />
+
+<h3 id="53-agregar-a-grupo-administradores">5.3 Agregar a grupo Administradores</h3>
+
+<pre><code class="language-cmd">net localgroup Administrators nuevoUsuario /add
+</code></pre>
+
+<hr />
+
+<h3 id="54-ver-permisos-ntfs">5.4 Ver permisos NTFS</h3>
+
+<pre><code class="language-cmd">icacls C:\Ruta\Carpeta
+</code></pre>
+
+<hr />
+
+<h2 id="6-servicios-del-sistema">6. Servicios del sistema</h2>
+
+<h3 id="61-listar-servicios">6.1 Listar servicios</h3>
+
+<pre><code class="language-cmd">sc query
+</code></pre>
+
+<p>En PowerShell:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Get-Service</span><span class="w">
+</span></code></pre></div></div>
+
+<hr />
+
+<h3 id="62-iniciar-o-detener-servicio">6.2 Iniciar o detener servicio</h3>
+
+<pre><code class="language-cmd">net stop NombreServicio
+net start NombreServicio
+</code></pre>
+
+<p>En PowerShell:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Start-Service</span><span class="w"> </span><span class="nx">NombreServicio</span><span class="w">
+</span><span class="n">Stop-Service</span><span class="w"> </span><span class="nx">NombreServicio</span><span class="w">
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="7-limpieza-y-mantenimiento-básico">7. Limpieza y mantenimiento básico</h2>
+
+<h3 id="71-liberador-de-espacio">7.1 Liberador de espacio</h3>
+
+<pre><code class="language-cmd">cleanmgr
+</code></pre>
+
+<hr />
+
+<h3 id="72-comprobar-programas-al-inicio">7.2 Comprobar programas al inicio</h3>
+
+<pre><code class="language-cmd">msconfig
+</code></pre>
+
+<p>En PowerShell:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Get-CimInstance</span><span class="w"> </span><span class="nx">Win32_StartupCommand</span><span class="w">
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="8-registro-de-eventos">8. Registro de eventos</h2>
+
+<h3 id="81-abrir-visor-de-eventos">8.1 Abrir visor de eventos</h3>
+
+<pre><code class="language-cmd">eventvwr
+</code></pre>
+
+<hr />
+
+<h3 id="82-consultar-eventos-desde-powershell">8.2 Consultar eventos desde PowerShell</h3>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Get-EventLog</span><span class="w"> </span><span class="nt">-LogName</span><span class="w"> </span><span class="nx">System</span><span class="w"> </span><span class="nt">-Newest</span><span class="w"> </span><span class="nx">20</span><span class="w">
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="9-actualizaciones-del-sistema">9. Actualizaciones del sistema</h2>
+
+<h3 id="91-forzar-detección-de-actualizaciones">9.1 Forzar detección de actualizaciones</h3>
+
+<pre><code class="language-cmd">wuauclt /detectnow
+</code></pre>
+
+<p>En PowerShell (Windows moderno):</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">UsoClient</span><span class="w"> </span><span class="nx">StartScan</span><span class="w">
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="10-automatización-básica-en-powershell">10. Automatización básica en PowerShell</h2>
+
+<p>Ejemplo de script para limpiar archivos temporales:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$TempPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"</span><span class="nv">$</span><span class="nn">env</span><span class="p">:</span><span class="nv">TEMP</span><span class="s2">\*"</span><span class="w">
+</span><span class="n">Remove-Item</span><span class="w"> </span><span class="nv">$TempPath</span><span class="w"> </span><span class="nt">-Recurse</span><span class="w"> </span><span class="nt">-Force</span><span class="w"> </span><span class="nt">-ErrorAction</span><span class="w"> </span><span class="nx">SilentlyContinue</span><span class="w">
+</span><span class="n">Write-Output</span><span class="w"> </span><span class="s2">"Archivos temporales eliminados."</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Guardar como:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mantenimiento.ps1
+</code></pre></div></div>
+
+<p>Ejecutar con:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">.</span><span class="n">\mantenimiento.ps1</span><span class="w">
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="buenas-prácticas">Buenas prácticas</h2>
+
+<ul>
+  <li>Ejecutar comandos críticos como <strong>Administrador</strong>.</li>
+  <li>Crear puntos de restauración antes de cambios importantes.</li>
+  <li>No usar <code class="language-plaintext highlighter-rouge">diskpart</code>, <code class="language-plaintext highlighter-rouge">icacls</code> o <code class="language-plaintext highlighter-rouge">Stop-Process</code> sin entender su impacto.</li>
+  <li>Mantener el sistema actualizado.</li>
+</ul>
+
+<hr />
+
+<p>Este conjunto de herramientas permite realizar mantenimiento preventivo y correctivo sin necesidad de software adicional, aprovechando las utilidades integradas en Windows.</p>
+
+</article>
+
+    </main><footer class="hxkr-panel px-6 py-4 flex flex-col md:flex-row items-center justify-center gap-2 text-xs fixed bottom-0 left-0 right-0 z-50" style="color:#3a5e3a;">
+    <span class="text-hxkr-text text-[16px]">MICHAEL ARIAS: <span style="color:#00ff41;">michaelarias@ustavillavo.edu.co</span> &nbsp;|&nbsp; JOSEPH DIAZ: <span style="color:#00ff41;">joseph.diaz@usantoto.edu.co</span></span>
+</footer>
+</body>
+
+
+</html>
