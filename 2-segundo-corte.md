@@ -389,19 +389,22 @@ let winLoaded = false;
 let linLoaded = false;
 
 async function loadClippy() {
-  if (winLoaded) return;
+  if (!winLoaded) {
   winLoaded = true;
   winAgent = await initAgent(agents.Clippy);
+  }
   winAgent.show();
+  
   setTimeout(() => {
     try { winAgent.speak('¡Hola! Pulsa un botón para preguntarme sobre los requisitos de Windows 11.'); } catch(e){}
   }, 800);
 }
 
 async function loadBonzi() {
-  if (linLoaded) return;
+  if (!linLoaded) {
   linLoaded = true;
   linAgent = await initAgent(agents.Bonzi);
+  }
   linAgent.show();
   setTimeout(() => {
     try { linAgent.speak('¡Hola! Pulsa un botón para preguntarme sobre los requisitos de Ubuntu.'); } catch(e){}
