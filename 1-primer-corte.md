@@ -4,6 +4,25 @@ layout: default
 title: Primer Corte
 ---
 
+<style>
+.img-cmd-slot {
+  border: 2px dashed #1a2e1a;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  color: #3a5e3a;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.8rem;
+  margin: 0.5rem 0 1.5rem 0;
+  padding: 1rem;
+}
+.img-cmd-slot img { width: 100%; height: auto; display: block; }
+.img-cmd-slot span { font-family: 'Orbitron', monospace; font-size: 0.55rem; letter-spacing: 0.1em; }
+</style>
+
 # Manual práctico de utilidades CMD y PowerShell para mantenimiento de Windows
 
 Este manual recopila comandos esenciales de **CMD** y **PowerShell** para realizar mantenimiento general del sistema en Windows. Incluye diagnóstico, reparación, red, almacenamiento, procesos y automatización básica.
@@ -32,7 +51,6 @@ Este manual recopila comandos esenciales de **CMD** y **PowerShell** para realiz
             <div><span style="color:#3a5e3a;">[00:00:12]</span> <span style="color:#00ff41;">✓</span> ipconfig /renew</div>
             <div><span style="color:#3a5e3a;">[00:00:13]</span> ipconfig /flushdns</div>
             <div><span style="color:#3a5e3a;">[00:00:14]</span> <span style="color:#00ffe7;">i</span> Get-PSDrive</div>
-            <!-- Duplicate for seamless loop -->
             <div><span style="color:#3a5e3a;">[00:00:01]</span> sfc /scannow</div>
             <div><span style="color:#3a5e3a;">[00:00:02]</span> <span style="color:#00ff41;">✓</span> DISM /Online /Cleanup-Image /RestoreHealth</div>
             <div><span style="color:#3a5e3a;">[00:00:03]</span> chkdsk C: /f /r</div>
@@ -59,11 +77,17 @@ Este manual recopila comandos esenciales de **CMD** y **PowerShell** para realiz
 
 ```cmd
 sfc /scannow
-````
+```
 
 * Escanea y repara archivos del sistema dañados.
 * Ejecutar como **Administrador**.
 * Útil ante errores, cierres inesperados o comportamiento inestable.
+
+<div class="img-cmd-slot">
+  <!-- Reemplaza con: <img src="{{ '/assets/img/cmd-sfc.png' | relative_url }}" alt="sfc /scannow resultado"> -->
+  <span>📷</span>
+  <span>CAPTURA — sfc /scannow funcionando</span>
+</div>
 
 ---
 
@@ -76,6 +100,12 @@ DISM /Online /Cleanup-Image /RestoreHealth
 * Repara la imagen de Windows usando Windows Update.
 * Ejecutar antes de `sfc` si este falla.
 
+<div class="img-cmd-slot">
+  <!-- <img src="{{ '/assets/img/cmd-dism.png' | relative_url }}" alt="DISM resultado"> -->
+  <span>📷</span>
+  <span>CAPTURA — DISM /RestoreHealth en ejecución</span>
+</div>
+
 ---
 
 ### 1.3 Comprobar disco (CHKDSK)
@@ -87,6 +117,12 @@ chkdsk C: /f /r
 * `/f` corrige errores.
 * `/r` localiza sectores defectuosos.
 * Puede requerir reinicio si se ejecuta en la unidad del sistema.
+
+<div class="img-cmd-slot">
+  <!-- <img src="{{ '/assets/img/cmd-chkdsk.png' | relative_url }}" alt="chkdsk resultado"> -->
+  <span>📷</span>
+  <span>CAPTURA — chkdsk C: /f /r</span>
+</div>
 
 ---
 
@@ -104,6 +140,12 @@ En PowerShell:
 Get-Process
 ```
 
+<div class="img-cmd-slot">
+  <!-- <img src="{{ '/assets/img/cmd-tasklist.png' | relative_url }}" alt="tasklist resultado"> -->
+  <span>📷</span>
+  <span>CAPTURA — tasklist / Get-Process</span>
+</div>
+
 ---
 
 ### 2.2 Finalizar proceso
@@ -118,6 +160,12 @@ En PowerShell:
 Stop-Process -Name programa -Force
 ```
 
+<div class="img-cmd-slot">
+  <!-- <img src="{{ '/assets/img/cmd-taskkill.png' | relative_url }}" alt="taskkill resultado"> -->
+  <span>📷</span>
+  <span>CAPTURA — taskkill / Stop-Process</span>
+</div>
+
 ---
 
 ### 2.3 Monitorizar uso del sistema
@@ -126,15 +174,17 @@ Stop-Process -Name programa -Force
 perfmon
 ```
 
-Abre el Monitor de Rendimiento.
-
 En PowerShell:
 
 ```powershell
 Get-ComputerInfo
 ```
 
-Muestra información detallada del sistema.
+<div class="img-cmd-slot">
+  <!-- <img src="{{ '/assets/img/cmd-perfmon.png' | relative_url }}" alt="perfmon / Get-ComputerInfo"> -->
+  <span>📷</span>
+  <span>CAPTURA — perfmon / Get-ComputerInfo</span>
+</div>
 
 ---
 
@@ -146,6 +196,12 @@ Muestra información detallada del sistema.
 ipconfig /all
 ```
 
+<div class="img-cmd-slot">
+  <!-- <img src="{{ '/assets/img/cmd-ipconfig.png' | relative_url }}" alt="ipconfig /all"> -->
+  <span>📷</span>
+  <span>CAPTURA — ipconfig /all</span>
+</div>
+
 ---
 
 ### 3.2 Renovar dirección IP
@@ -155,6 +211,12 @@ ipconfig /release
 ipconfig /renew
 ```
 
+<div class="img-cmd-slot">
+  <!-- <img src="{{ '/assets/img/cmd-iprenew.png' | relative_url }}" alt="ipconfig /release /renew"> -->
+  <span>📷</span>
+  <span>CAPTURA — ipconfig /release y /renew</span>
+</div>
+
 ---
 
 ### 3.3 Vaciar caché DNS
@@ -162,6 +224,12 @@ ipconfig /renew
 ```cmd
 ipconfig /flushdns
 ```
+
+<div class="img-cmd-slot">
+  <!-- <img src="{{ '/assets/img/cmd-flushdns.png' | relative_url }}" alt="flushdns"> -->
+  <span>📷</span>
+  <span>CAPTURA — ipconfig /flushdns</span>
+</div>
 
 ---
 
@@ -181,6 +249,12 @@ En PowerShell:
 Test-NetConnection google.com
 ```
 
+<div class="img-cmd-slot">
+  <!-- <img src="{{ '/assets/img/cmd-ping.png' | relative_url }}" alt="ping / tracert resultado"> -->
+  <span>📷</span>
+  <span>CAPTURA — ping y tracert funcionando</span>
+</div>
+
 ---
 
 ## 4. Gestión de almacenamiento
@@ -191,6 +265,12 @@ Test-NetConnection google.com
 Get-PSDrive
 ```
 
+<div class="img-cmd-slot">
+  <!-- <img src="{{ '/assets/img/cmd-psdrive.png' | relative_url }}" alt="Get-PSDrive"> -->
+  <span>📷</span>
+  <span>CAPTURA — Get-PSDrive</span>
+</div>
+
 ---
 
 ### 4.2 Listar discos y particiones
@@ -199,6 +279,12 @@ Get-PSDrive
 Get-Disk
 Get-Partition
 ```
+
+<div class="img-cmd-slot">
+  <!-- <img src="{{ '/assets/img/cmd-diskpart.png' | relative_url }}" alt="Get-Disk / Get-Partition"> -->
+  <span>📷</span>
+  <span>CAPTURA — Get-Disk y Get-Partition</span>
+</div>
 
 ---
 
@@ -216,6 +302,12 @@ select disk 0
 list partition
 ```
 
+<div class="img-cmd-slot">
+  <!-- <img src="{{ '/assets/img/cmd-diskpart2.png' | relative_url }}" alt="diskpart"> -->
+  <span>📷</span>
+  <span>CAPTURA — diskpart en ejecución</span>
+</div>
+
 ---
 
 ## 5. Usuarios y permisos
@@ -225,6 +317,12 @@ list partition
 ```cmd
 net user
 ```
+
+<div class="img-cmd-slot">
+  <!-- <img src="{{ '/assets/img/cmd-netuser.png' | relative_url }}" alt="net user"> -->
+  <span>📷</span>
+  <span>CAPTURA — net user</span>
+</div>
 
 ---
 
@@ -250,6 +348,12 @@ net localgroup Administrators nuevoUsuario /add
 icacls C:\Ruta\Carpeta
 ```
 
+<div class="img-cmd-slot">
+  <!-- <img src="{{ '/assets/img/cmd-icacls.png' | relative_url }}" alt="icacls"> -->
+  <span>📷</span>
+  <span>CAPTURA — icacls mostrando permisos</span>
+</div>
+
 ---
 
 ## 6. Servicios del sistema
@@ -265,6 +369,12 @@ En PowerShell:
 ```powershell
 Get-Service
 ```
+
+<div class="img-cmd-slot">
+  <!-- <img src="{{ '/assets/img/cmd-services.png' | relative_url }}" alt="Get-Service"> -->
+  <span>📷</span>
+  <span>CAPTURA — sc query / Get-Service</span>
+</div>
 
 ---
 
@@ -292,6 +402,12 @@ Stop-Service NombreServicio
 cleanmgr
 ```
 
+<div class="img-cmd-slot">
+  <!-- <img src="{{ '/assets/img/cmd-cleanmgr.png' | relative_url }}" alt="cleanmgr"> -->
+  <span>📷</span>
+  <span>CAPTURA — cleanmgr abierto</span>
+</div>
+
 ---
 
 ### 7.2 Comprobar programas al inicio
@@ -306,6 +422,12 @@ En PowerShell:
 Get-CimInstance Win32_StartupCommand
 ```
 
+<div class="img-cmd-slot">
+  <!-- <img src="{{ '/assets/img/cmd-msconfig.png' | relative_url }}" alt="msconfig"> -->
+  <span>📷</span>
+  <span>CAPTURA — msconfig / StartupCommand</span>
+</div>
+
 ---
 
 ## 8. Registro de eventos
@@ -316,6 +438,12 @@ Get-CimInstance Win32_StartupCommand
 eventvwr
 ```
 
+<div class="img-cmd-slot">
+  <!-- <img src="{{ '/assets/img/cmd-eventvwr.png' | relative_url }}" alt="eventvwr"> -->
+  <span>📷</span>
+  <span>CAPTURA — visor de eventos</span>
+</div>
+
 ---
 
 ### 8.2 Consultar eventos desde PowerShell
@@ -323,6 +451,12 @@ eventvwr
 ```powershell
 Get-EventLog -LogName System -Newest 20
 ```
+
+<div class="img-cmd-slot">
+  <!-- <img src="{{ '/assets/img/cmd-eventlog.png' | relative_url }}" alt="Get-EventLog"> -->
+  <span>📷</span>
+  <span>CAPTURA — Get-EventLog resultado</span>
+</div>
 
 ---
 
@@ -340,6 +474,12 @@ En PowerShell (Windows moderno):
 UsoClient StartScan
 ```
 
+<div class="img-cmd-slot">
+  <!-- <img src="{{ '/assets/img/cmd-update.png' | relative_url }}" alt="actualizaciones"> -->
+  <span>📷</span>
+  <span>CAPTURA — detección de actualizaciones</span>
+</div>
+
 ---
 
 ## 10. Automatización básica en PowerShell
@@ -352,17 +492,17 @@ Remove-Item $TempPath -Recurse -Force -ErrorAction SilentlyContinue
 Write-Output "Archivos temporales eliminados."
 ```
 
-Guardar como:
-
-```
-mantenimiento.ps1
-```
-
-Ejecutar con:
+Guardar como `mantenimiento.ps1` y ejecutar con:
 
 ```powershell
 .\mantenimiento.ps1
 ```
+
+<div class="img-cmd-slot">
+  <!-- <img src="{{ '/assets/img/cmd-script.png' | relative_url }}" alt="script PowerShell"> -->
+  <span>📷</span>
+  <span>CAPTURA — script de limpieza ejecutándose</span>
+</div>
 
 ---
 
@@ -372,7 +512,3 @@ Ejecutar con:
 * Crear puntos de restauración antes de cambios importantes.
 * No usar `diskpart`, `icacls` o `Stop-Process` sin entender su impacto.
 * Mantener el sistema actualizado.
-
----
-
-Este conjunto de herramientas permite realizar mantenimiento preventivo y correctivo sin necesidad de software adicional, aprovechando las utilidades integradas en Windows.
