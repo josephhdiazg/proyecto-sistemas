@@ -3,8 +3,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     {%- seo -%}
-    <link id="main-stylesheet" rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <!--<link id="main-stylesheet" rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">-->
     {%- feed_meta -%}
+
+    {% vite_client_tag %}
+    {% vite_javascript_tag application %}
 
     {% comment %}
     Placeholder to allow defining custom head, in principle, you can add anything here, e.g. favicons:
