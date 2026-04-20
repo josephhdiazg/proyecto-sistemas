@@ -1,0 +1,3 @@
+
+vite: bin/vite dev
+jekyll: bundle exec jekyll serve --livereload
