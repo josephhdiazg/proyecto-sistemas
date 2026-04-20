@@ -4,6 +4,7 @@
     "@tailwindcss/postcss": "^4.2.1",
     "@tailwindcss/typography": "^0.5.19",
     "autoprefixer": "^10.4.27",
+    "clippyjs": "^0.1.0",
     "cssnano": "^7.1.2",
     "postcss": "^8.5.8",
     "postcss-cli": "^11.0.1",
