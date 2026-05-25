@@ -1,5 +1,5 @@
 ---
-permalink: /segundo-corte
+permalink: /segundo-corte.html
 layout: base
 title: Segundo Corte
 ---

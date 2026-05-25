@@ -1,5 +1,5 @@
 ---
-permalink: /primer-corte
+permalink: /primer-corte.html
 layout: default
 title: Primer Corte
 ---
@@ -44,13 +44,12 @@ Este manual recopila comandos esenciales de **CMD** y **PowerShell** para realiz
             <div><span style="color:#3a5e3a;">[00:00:05]</span> <span style="color:#ffb300;">!</span> Get-Process</div>
             <div><span style="color:#3a5e3a;">[00:00:06]</span> taskkill /IM programa.exe /F</div>
             <div><span style="color:#3a5e3a;">[00:00:07]</span> <span style="color:#ff2244;">✗</span> Stop-Process -Name programa -Force</div>
-            <div><span style="color:#3a5e3a;">[00:00:08]</span> perfmon</div>
-            <div><span style="color:#3a5e3a;">[00:00:09]</span> <span style="color:#00ff41;">✓</span> Get-ComputerInfo</div>
-            <div><span style="color:#3a5e3a;">[00:00:10]</span> ipconfig /all</div>
-            <div><span style="color:#3a5e3a;">[00:00:11]</span> ipconfig /release</div>
-            <div><span style="color:#3a5e3a;">[00:00:12]</span> <span style="color:#00ff41;">✓</span> ipconfig /renew</div>
-            <div><span style="color:#3a5e3a;">[00:00:13]</span> ipconfig /flushdns</div>
-            <div><span style="color:#3a5e3a;">[00:00:14]</span> <span style="color:#00ffe7;">i</span> Get-PSDrive</div>
+            <div><span style="color:#3a5e3a;">[00:00:08]</span> <span style="color:#00ff41;">✓</span> Get-ComputerInfo</div>
+            <div><span style="color:#3a5e3a;">[00:00:09]</span> ipconfig /all</div>
+            <div><span style="color:#3a5e3a;">[00:00:10]</span> ipconfig /release</div>
+            <div><span style="color:#3a5e3a;">[00:00:11]</span> <span style="color:#00ff41;">✓</span> ipconfig /renew</div>
+            <div><span style="color:#3a5e3a;">[00:00:12]</span> ipconfig /flushdns</div>
+            <div><span style="color:#3a5e3a;">[00:00:13]</span> <span style="color:#00ffe7;">i</span> Get-PSDrive</div>
             <div><span style="color:#3a5e3a;">[00:00:01]</span> sfc /scannow</div>
             <div><span style="color:#3a5e3a;">[00:00:02]</span> <span style="color:#00ff41;">✓</span> DISM /Online /Cleanup-Image /RestoreHealth</div>
             <div><span style="color:#3a5e3a;">[00:00:03]</span> chkdsk C: /f /r</div>
@@ -84,9 +83,7 @@ sfc /scannow
 * Útil ante errores, cierres inesperados o comportamiento inestable.
 
 <div class="img-cmd-slot">
-  <!-- Reemplaza con: <img src="{{ '/assets/img/cmd-sfc.png' | relative_url }}" alt="sfc /scannow resultado"> -->
-  <span>📷</span>
-  <span>CAPTURA — sfc /scannow funcionando</span>
+  <img src="{{ '/assets/img/windows_commands/sfc_scannow.png' | relative_url }}" alt="sfc /scannow resultado">
 </div>
 
 ---
@@ -101,9 +98,7 @@ DISM /Online /Cleanup-Image /RestoreHealth
 * Ejecutar antes de `sfc` si este falla.
 
 <div class="img-cmd-slot">
-  <!-- <img src="{{ '/assets/img/cmd-dism.png' | relative_url }}" alt="DISM resultado"> -->
-  <span>📷</span>
-  <span>CAPTURA — DISM /RestoreHealth en ejecución</span>
+  <img src="{{ '/assets/img/windows_commands/dism_online_cleanup-image.png' | relative_url }}" alt="DISM resultado">
 </div>
 
 ---
@@ -119,9 +114,7 @@ chkdsk C: /f /r
 * Puede requerir reinicio si se ejecuta en la unidad del sistema.
 
 <div class="img-cmd-slot">
-  <!-- <img src="{{ '/assets/img/cmd-chkdsk.png' | relative_url }}" alt="chkdsk resultado"> -->
-  <span>📷</span>
-  <span>CAPTURA — chkdsk C: /f /r</span>
+  <img src="{{ '/assets/img/windows_commands/chkdsk.png' | relative_url }}" alt="chkdsk resultado">
 </div>
 
 ---
@@ -141,9 +134,8 @@ Get-Process
 ```
 
 <div class="img-cmd-slot">
-  <!-- <img src="{{ '/assets/img/cmd-tasklist.png' | relative_url }}" alt="tasklist resultado"> -->
-  <span>📷</span>
-  <span>CAPTURA — tasklist / Get-Process</span>
+  <img src="{{ '/assets/img/windows_commands/tasklist.png' | relative_url }}" alt="tasklist resultado">
+  <img src="{{ '/assets/img/windows_commands/Get-Process.png' | relative_url }}" alt="Get-Process resultado">
 </div>
 
 ---
@@ -161,29 +153,20 @@ Stop-Process -Name programa -Force
 ```
 
 <div class="img-cmd-slot">
-  <!-- <img src="{{ '/assets/img/cmd-taskkill.png' | relative_url }}" alt="taskkill resultado"> -->
-  <span>📷</span>
-  <span>CAPTURA — taskkill / Stop-Process</span>
+  <img src="{{ '/assets/img/windows_commands/taskkill_IM_program_F.png' | relative_url }}" alt="taskkill resultado">
+  <img src="{{ '/assets/img/windows_commands/Stop_Process_Name_Force.png' | relative_url }}" alt="Stop-Process resultado">
 </div>
 
 ---
 
-### 2.3 Monitorizar uso del sistema
-
-```cmd
-perfmon
-```
-
-En PowerShell:
+### 2.3 Información del sistema
 
 ```powershell
 Get-ComputerInfo
 ```
 
 <div class="img-cmd-slot">
-  <!-- <img src="{{ '/assets/img/cmd-perfmon.png' | relative_url }}" alt="perfmon / Get-ComputerInfo"> -->
-  <span>📷</span>
-  <span>CAPTURA — perfmon / Get-ComputerInfo</span>
+  <img src="{{ '/assets/img/windows_commands/get-computerinfo.png' | relative_url }}" alt="Get-ComputerInfo resultado">
 </div>
 
 ---
@@ -197,9 +180,7 @@ ipconfig /all
 ```
 
 <div class="img-cmd-slot">
-  <!-- <img src="{{ '/assets/img/cmd-ipconfig.png' | relative_url }}" alt="ipconfig /all"> -->
-  <span>📷</span>
-  <span>CAPTURA — ipconfig /all</span>
+  <img src="{{ '/assets/img/windows_commands/ipconfig_all.png' | relative_url }}" alt="ipconfig /all resultado">
 </div>
 
 ---
@@ -212,9 +193,7 @@ ipconfig /renew
 ```
 
 <div class="img-cmd-slot">
-  <!-- <img src="{{ '/assets/img/cmd-iprenew.png' | relative_url }}" alt="ipconfig /release /renew"> -->
-  <span>📷</span>
-  <span>CAPTURA — ipconfig /release y /renew</span>
+  <img src="{{ '/assets/img/windows_commands/ipconfig_release_and_renew.png' | relative_url }}" alt="ipconfig /release y /renew resultado">
 </div>
 
 ---
@@ -226,9 +205,7 @@ ipconfig /flushdns
 ```
 
 <div class="img-cmd-slot">
-  <!-- <img src="{{ '/assets/img/cmd-flushdns.png' | relative_url }}" alt="flushdns"> -->
-  <span>📷</span>
-  <span>CAPTURA — ipconfig /flushdns</span>
+  <img src="{{ '/assets/img/windows_commands/ipconfig_flushdns.png' | relative_url }}" alt="ipconfig /flushdns resultado">
 </div>
 
 ---
@@ -250,9 +227,9 @@ Test-NetConnection google.com
 ```
 
 <div class="img-cmd-slot">
-  <!-- <img src="{{ '/assets/img/cmd-ping.png' | relative_url }}" alt="ping / tracert resultado"> -->
-  <span>📷</span>
-  <span>CAPTURA — ping y tracert funcionando</span>
+  <img src="{{ '/assets/img/windows_commands/ping_googlecom.png' | relative_url }}" alt="ping google.com resultado">
+  <img src="{{ '/assets/img/windows_commands/tracert_googlecom.png' | relative_url }}" alt="tracert google.com resultado">
+  <img src="{{ '/assets/img/windows_commands/Test-NetConnection_googlecom.png' | relative_url }}" alt="Test-NetConnection resultado">
 </div>
 
 ---
@@ -266,9 +243,7 @@ Get-PSDrive
 ```
 
 <div class="img-cmd-slot">
-  <!-- <img src="{{ '/assets/img/cmd-psdrive.png' | relative_url }}" alt="Get-PSDrive"> -->
-  <span>📷</span>
-  <span>CAPTURA — Get-PSDrive</span>
+  <img src="{{ '/assets/img/windows_commands/Get-PSDrive.png' | relative_url }}" alt="Get-PSDrive resultado">
 </div>
 
 ---
@@ -281,9 +256,8 @@ Get-Partition
 ```
 
 <div class="img-cmd-slot">
-  <!-- <img src="{{ '/assets/img/cmd-diskpart.png' | relative_url }}" alt="Get-Disk / Get-Partition"> -->
-  <span>📷</span>
-  <span>CAPTURA — Get-Disk y Get-Partition</span>
+  <img src="{{ '/assets/img/windows_commands/Get-Disk.png' | relative_url }}" alt="Get-Disk resultado">
+  <img src="{{ '/assets/img/windows_commands/Get-Partition.png' | relative_url }}" alt="Get-Partition resultado">
 </div>
 
 ---
@@ -303,9 +277,7 @@ list partition
 ```
 
 <div class="img-cmd-slot">
-  <!-- <img src="{{ '/assets/img/cmd-diskpart2.png' | relative_url }}" alt="diskpart"> -->
-  <span>📷</span>
-  <span>CAPTURA — diskpart en ejecución</span>
+  <img src="{{ '/assets/img/windows_commands/diskpart.png' | relative_url }}" alt="diskpart en ejecución">
 </div>
 
 ---
@@ -319,9 +291,7 @@ net user
 ```
 
 <div class="img-cmd-slot">
-  <!-- <img src="{{ '/assets/img/cmd-netuser.png' | relative_url }}" alt="net user"> -->
-  <span>📷</span>
-  <span>CAPTURA — net user</span>
+  <img src="{{ '/assets/img/windows_commands/net%20user.png' | relative_url }}" alt="net user resultado">
 </div>
 
 ---
@@ -332,6 +302,10 @@ net user
 net user nuevoUsuario contraseña /add
 ```
 
+<div class="img-cmd-slot">
+  <img src="{{ '/assets/img/windows_commands/netusernuevoUsuariocontraseñaadd.png' | relative_url }}" alt="net user /add resultado">
+</div>
+
 ---
 
 ### 5.3 Agregar a grupo Administradores
@@ -339,6 +313,10 @@ net user nuevoUsuario contraseña /add
 ```cmd
 net localgroup Administrators nuevoUsuario /add
 ```
+
+<div class="img-cmd-slot">
+  <img src="{{ '/assets/img/windows_commands/netlocalgroupAdministratorsnuevoUsuarioadd.png' | relative_url }}" alt="net localgroup /add resultado">
+</div>
 
 ---
 
@@ -349,9 +327,7 @@ icacls C:\Ruta\Carpeta
 ```
 
 <div class="img-cmd-slot">
-  <!-- <img src="{{ '/assets/img/cmd-icacls.png' | relative_url }}" alt="icacls"> -->
-  <span>📷</span>
-  <span>CAPTURA — icacls mostrando permisos</span>
+  <img src="{{ '/assets/img/windows_commands/icacls.png' | relative_url }}" alt="icacls resultado">
 </div>
 
 ---
@@ -371,9 +347,8 @@ Get-Service
 ```
 
 <div class="img-cmd-slot">
-  <!-- <img src="{{ '/assets/img/cmd-services.png' | relative_url }}" alt="Get-Service"> -->
-  <span>📷</span>
-  <span>CAPTURA — sc query / Get-Service</span>
+  <img src="{{ '/assets/img/windows_commands/sc_query.png' | relative_url }}" alt="sc query resultado">
+  <img src="{{ '/assets/img/windows_commands/Get-Service.png' | relative_url }}" alt="Get-Service resultado">
 </div>
 
 ---
@@ -392,6 +367,11 @@ Start-Service NombreServicio
 Stop-Service NombreServicio
 ```
 
+<div class="img-cmd-slot">
+  <img src="{{ '/assets/img/windows_commands/net%20stop%20and%20start%20Spooler.png' | relative_url }}" alt="net stop/start resultado">
+  <img src="{{ '/assets/img/windows_commands/stop%20and%20start%20service.png' | relative_url }}" alt="Start/Stop-Service resultado">
+</div>
+
 ---
 
 ## 7. Limpieza y mantenimiento básico
@@ -403,9 +383,7 @@ cleanmgr
 ```
 
 <div class="img-cmd-slot">
-  <!-- <img src="{{ '/assets/img/cmd-cleanmgr.png' | relative_url }}" alt="cleanmgr"> -->
-  <span>📷</span>
-  <span>CAPTURA — cleanmgr abierto</span>
+  <img src="{{ '/assets/img/windows_commands/cleanmgr.png' | relative_url }}" alt="cleanmgr resultado">
 </div>
 
 ---
@@ -423,9 +401,8 @@ Get-CimInstance Win32_StartupCommand
 ```
 
 <div class="img-cmd-slot">
-  <!-- <img src="{{ '/assets/img/cmd-msconfig.png' | relative_url }}" alt="msconfig"> -->
-  <span>📷</span>
-  <span>CAPTURA — msconfig / StartupCommand</span>
+  <img src="{{ '/assets/img/windows_commands/msconfig.png' | relative_url }}" alt="msconfig resultado">
+  <img src="{{ '/assets/img/windows_commands/Get-CimInstance%20Win32_StartupCommand.png' | relative_url }}" alt="Get-CimInstance resultado">
 </div>
 
 ---
@@ -439,9 +416,7 @@ eventvwr
 ```
 
 <div class="img-cmd-slot">
-  <!-- <img src="{{ '/assets/img/cmd-eventvwr.png' | relative_url }}" alt="eventvwr"> -->
-  <span>📷</span>
-  <span>CAPTURA — visor de eventos</span>
+  <img src="{{ '/assets/img/windows_commands/eventvwr.png' | relative_url }}" alt="eventvwr resultado">
 </div>
 
 ---
@@ -453,9 +428,7 @@ Get-EventLog -LogName System -Newest 20
 ```
 
 <div class="img-cmd-slot">
-  <!-- <img src="{{ '/assets/img/cmd-eventlog.png' | relative_url }}" alt="Get-EventLog"> -->
-  <span>📷</span>
-  <span>CAPTURA — Get-EventLog resultado</span>
+  <img src="{{ '/assets/img/windows_commands/Get-EventLog%20-LogName%20System%20-Newest%2020.png' | relative_url }}" alt="Get-EventLog resultado">
 </div>
 
 ---
@@ -475,33 +448,8 @@ UsoClient StartScan
 ```
 
 <div class="img-cmd-slot">
-  <!-- <img src="{{ '/assets/img/cmd-update.png' | relative_url }}" alt="actualizaciones"> -->
-  <span>📷</span>
-  <span>CAPTURA — detección de actualizaciones</span>
-</div>
-
----
-
-## 10. Automatización básica en PowerShell
-
-Ejemplo de script para limpiar archivos temporales:
-
-```powershell
-$TempPath = "$env:TEMP\*"
-Remove-Item $TempPath -Recurse -Force -ErrorAction SilentlyContinue
-Write-Output "Archivos temporales eliminados."
-```
-
-Guardar como `mantenimiento.ps1` y ejecutar con:
-
-```powershell
-.\mantenimiento.ps1
-```
-
-<div class="img-cmd-slot">
-  <!-- <img src="{{ '/assets/img/cmd-script.png' | relative_url }}" alt="script PowerShell"> -->
-  <span>📷</span>
-  <span>CAPTURA — script de limpieza ejecutándose</span>
+  <img src="{{ '/assets/img/windows_commands/wuauclt%20detectnow.png' | relative_url }}" alt="wuauclt /detectnow resultado">
+  <img src="{{ '/assets/img/windows_commands/UsoClient%20StartScan.png' | relative_url }}" alt="UsoClient StartScan resultado">
 </div>
 
 ---

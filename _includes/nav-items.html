@@ -5,6 +5,6 @@
 {%- if hyperpage.url != "/" -%}
 {%- assign hyperpage_url = hyperpage.url | append: ".html" -%}
 {%- endif -%}
-<a href="{{ hyperpage_url | relative_url }}" class="text-glow-dim text-lg" style="color:#00ff41;">{{ hyperpage.title | escape }}</a>
+<a href="{{ hyperpage_url | relative_url }}" class="nav-btn{% if page.url == hyperpage.url %} active{% endif %}">{{ hyperpage.title | escape }}</a>
 {%- endif -%}
 {%- endfor %}

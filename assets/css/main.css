@@ -49,6 +49,34 @@ body {
     overflow-x: hidden;
 }
 
+/* ── Botones de navegación ── */
+.nav-btn {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #00c832;
+    border: 1px solid #2a4e2a;
+    padding: 0.35rem 0.85rem;
+    text-decoration: none;
+    transition: color 0.15s, border-color 0.15s, box-shadow 0.15s, background 0.15s;
+    white-space: nowrap;
+}
+.nav-btn:hover {
+    color: #00ff41;
+    border-color: #00ff4188;
+    background: #00ff4108;
+    box-shadow: 0 0 8px #00ff4133;
+    text-decoration: none;
+}
+.nav-btn.active {
+    color: #00ff41;
+    border-color: #00ff41;
+    background: #00ff4110;
+    box-shadow: 0 0 12px #00ff4155, inset 0 0 6px #00ff4118;
+    text-decoration: none;
+}
+
 /* CRT scanline overlay */
 body::after {
     content: '';
