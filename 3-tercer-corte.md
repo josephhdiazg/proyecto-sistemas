@@ -1,5 +1,5 @@
 ---
-permalink: /tercer-corte.html
+permalink: /tercer-corte
 layout: base
 title: Tercer Corte
 ---

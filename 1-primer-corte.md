@@ -1,5 +1,5 @@
 ---
-permalink: /primer-corte.html
+permalink: /primer-corte
 layout: default
 title: Primer Corte
 ---

@@ -57,14 +57,17 @@ async function showBonzi() {
     } catch(e){}
 }
 
-function hideAgent(agent) {
+async function hideAgent(agent) {
+    try { agent.closeBalloon(); } catch(e){}
+
+    await delay(1500);
+
     let promise = new Promise(resolve => {
-        try {
-            agent.hide(false, resolve);
-        } catch(e) {}
+        try { agent.hide(false, resolve); } catch(e) {}
     });
 
-    return promise;
+    await promise;
+    await delay(250);
 }
 
 // Observer: carga el agente correcto y oculta el otro
