@@ -1,6 +1,10 @@
 {%- for path in include.paths -%}
 {%- assign hyperpage = site.pages | where: "path", path | first -%}
 {%- if hyperpage.title %}
-<a href="{{ hyperpage.url | relative_url }}" class="text-glow-dim text-lg" style="color:#00ff41;">{{ hyperpage.title | escape }}</a>
+{%- assign hyperpage_url = hyperpage.url -%}
+{%- if hyperpage.url != "/" -%}
+{%- assign hyperpage_url = hyperpage.url | append: ".html" -%}
+{%- endif -%}
+<a href="{{ hyperpage_url | relative_url }}" class="text-glow-dim text-lg" style="color:#00ff41;">{{ hyperpage.title | escape }}</a>
 {%- endif -%}
 {%- endfor %}
